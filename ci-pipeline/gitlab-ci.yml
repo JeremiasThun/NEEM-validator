@@ -5,9 +5,13 @@ default:
     - name: mongo:4.4.9
       alias: mongo
 
+variables:
+  KNOWROB_MONGO_HOST: mongo
+
 build-job:
   stage: build
   script:
+    - export
     - source /source_ros.sh
     - roslaunch neem_validator validator.launch path_to_neem:=blub
 
