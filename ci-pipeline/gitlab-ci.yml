@@ -12,6 +12,7 @@ variables:
 build-job:
   stage: build
   script:
+    - cd /home/validator/catkin_ws/src/neem_validator
     - git pull
     - export
     - source /source_ros.sh
