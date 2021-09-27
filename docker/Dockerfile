@@ -31,11 +31,6 @@ RUN source /ros_entrypoint.sh &&\
 
 ENV SWI_HOME_DIR=/usr/lib/swi-prolog
 
-### Changing to modified KnowRob
-WORKDIR /home/validator/catkin_ws/src
-RUN rm -rf knowrob
-RUN git clone --branch mongo_interface https://github.com/JeremiasThun/knowrob.git
-
 ### Installing NEEM-Validator
 
 RUN python -m pip install pymongo rdflib
