@@ -39,7 +39,7 @@ RUN git clone https://gitlab.informatik.uni-bremen.de/bachelor-thesis/neem_valid
 WORKDIR /home/validator/catkin_ws
 RUN source /ros_entrypoint.sh && catkin build
 
-COPY source_ros.sh /source_ros.sh
+COPY docker/source_ros.sh /source_ros.sh
 ENTRYPOINT ["/source_ros.sh"]
 
 
