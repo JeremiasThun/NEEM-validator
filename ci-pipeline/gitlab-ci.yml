@@ -6,7 +6,7 @@ default:
       alias: mongo
 
 variables:
-  KNOWROB_MONGO_HOST: mongo
+  KNOWROB_MONGO_HOST: mongodb://mongo
   KNOWROB_MONGO_PORT: 27017
 
 build-job:
