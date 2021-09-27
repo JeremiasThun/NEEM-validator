@@ -38,6 +38,7 @@ RUN apt install git -y
 RUN git clone https://gitlab.informatik.uni-bremen.de/bachelor-thesis/neem_validator.git
 WORKDIR /home/validator/catkin_ws
 RUN source /ros_entrypoint.sh && catkin build
+WORKDIR /home/validator/catkin_ws/src/neem_validator
 
 COPY docker/source_ros.sh /source_ros.sh
 ENTRYPOINT ["/source_ros.sh"]

@@ -6,12 +6,13 @@ default:
       alias: mongo
 
 variables:
-  KNOWROB_MONGO_HOST: mongodb://mongo
+  KNOWROB_MONGO_HOST: mongodb://localhost.mongo
   KNOWROB_MONGO_PORT: 27017
 
 build-job:
   stage: build
   script:
+    - git pull
     - export
     - source /source_ros.sh
     - roslaunch neem_validator validator.launch path_to_neem:=blub
