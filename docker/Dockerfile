@@ -21,11 +21,9 @@ WORKDIR /home/validator/catkin_ws/src
 
 RUN apt install python-catkin-tools -y
 
-COPY docker/knowrob-base_modified.rosinstall /knowrob-base_modified.rosinstall
-
 RUN source /ros_entrypoint.sh &&\
     wstool init &&\
-    wstool merge /knowrob-base_modified.rosinstall &&\
+    wstool merge https://raw.github.com/knowrob/knowrob/master/rosinstall/knowrob-base.rosinstall &&\
     wstool update &&\
     yes | rosdep install --ignore-src --from-paths .
 
