@@ -15,8 +15,9 @@ RUN mkdir -p /home/validator/catkin_ws/src
 WORKDIR /home/validator/catkin_ws/src
 
 RUN apt install python-catkin-tools -y
+RUN echo "hi"
 
-COPY docker/knowrob-base_modified.rosinstall /knowrob-base_modified.rosinstall
+COPY knowrob-base_modified.rosinstall /knowrob-base_modified.rosinstall
 
 RUN apt-get update &&\
     source /ros_entrypoint.sh &&\
@@ -30,9 +31,9 @@ ENV SWI_HOME_DIR=/usr/lib/swi-prolog
 ### Installing NEEM-Validator
 
 # DVC
-RUN apt-get install python3-pip python3-venv -y
-RUN python3 -m pip install --user pipx
-RUN python3 -m pipx ensurepath && exec bash && pipx install dvc
+RUN wget https://dvc.org/download/linux-deb/dvc-2.7.4
+RUN mv dvc-2.7.4 dvc.deb
+RUN apt install ./dvc.deb
 
 # Pip for Python 2.7
 RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
@@ -48,7 +49,7 @@ WORKDIR /home/validator/catkin_ws
 RUN source /ros_entrypoint.sh && catkin build
 WORKDIR /home/validator/catkin_ws/src/neem_validator
 
-COPY docker/source_ros.sh /source_ros.sh
+COPY source_ros.sh /source_ros.sh
 ENTRYPOINT ["/source_ros.sh"]
 
 
