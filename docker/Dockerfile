@@ -16,7 +16,7 @@ WORKDIR /home/validator/catkin_ws/src
 
 RUN apt install python-catkin-tools -y
 
-COPY knowrob-base_modified.rosinstall /knowrob-base_modified.rosinstall
+COPY docker/knowrob-base_modified.rosinstall /knowrob-base_modified.rosinstall
 
 RUN apt-get update &&\
     source /ros_entrypoint.sh &&\
@@ -48,7 +48,7 @@ WORKDIR /home/validator/catkin_ws
 RUN source /ros_entrypoint.sh && catkin build
 WORKDIR /home/validator/catkin_ws/src/neem_validator
 
-COPY source_ros.sh /source_ros.sh
+COPY docker/source_ros.sh /source_ros.sh
 ENTRYPOINT ["/source_ros.sh"]
 
 
