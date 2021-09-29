@@ -28,6 +28,11 @@ RUN apt-get update &&\
 
 ENV SWI_HOME_DIR=/usr/lib/swi-prolog
 
+# Mongo shell client
+WORKDIR /
+RUN wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2004-x86_64-100.5.0.deb
+RUN apt install ./mongodb-database*.deb
+
 ### Installing NEEM-Validator
 
 # DVC
