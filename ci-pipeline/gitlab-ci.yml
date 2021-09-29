@@ -1,38 +1,84 @@
+stages:
+  - build
+  - test
+
+variables:
+  KNOWROB_MONGO_HOST: mongo
+  KNOWROB_MONGO_PORT: 27017
+  NEEM_VALIDATOR: '/home/validator/catkin_ws/src/neem_validator'
+  DB_NAME: $RANDOM$RANDOM
+
 default:
   image: jeremiasthun/knowrob-playground
-
   services:
     - name: mongo:4.4.9
       alias: mongo
+  before_script:
+    - PATH_TO_NEEM=$PWD
+    - cd /home/validator/catkin_ws/src/knowrob
+    - git pull
+    - cd $NEEM_VALIDATOR
+    - git pull
+    - catkin build
+    - mv settings/knowrob_config.pl settings/knowrob_config_orig.pl
+    - sed '/setting(mng_client:db_name/d' settings/knowrob_config_orig.pl > settings/knowrob_config.pl
+    - echo "setting(mng_client:db_name, $DB_NAME)." >> settings/knowrob_config.pl
+    - source /source_ros.sh
 
-variables:
-  KNOWROB_MONGO_HOST: mongodb://localhost.mongo
-  KNOWROB_MONGO_PORT: 27017
-
-build-job:
+check-mongodump:
   stage: build
   script:
-    - cd /home/validator/catkin_ws/src/neem_validator
-    - git pull
-    - export
-    - source /source_ros.sh
-    - roslaunch neem_validator validator.launch path_to_neem:=blub
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - chmod 600 $DVC_KEY
+    - ssh-add $DVC_KEY
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - cd $PATH_TO_NEEM && dvc pull
+    - cd $NEEM_VALIDATOR
+    - cat settings/gitlab-ci/check-mongodump.yaml
+    - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/check-mongodump.yaml
+    - cat logs/validation_results
+    - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
 
-test-job1:
-  image: jeremiasthun/knowrob-playground
+check-external-resources:
   stage: test
   script:
-    - echo "Hi I'm there"
+    - cat settings/gitlab-ci/check-external-resources.yaml
+    - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/check-external-resources.yaml
+    - cat logs/validation_results
+    - cat logs/errors
+    - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
 
-test-job2:
+mongodb-schema-required:
   stage: test
   script:
-    - echo "This job tests something, but takes more time than test-job1."
-    - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
-    - echo "which simulates a test that runs 20 seconds longer than test-job1"
-    - sleep 20
+    - cat settings/gitlab-ci/mongodb-schema-required.yaml
+    - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/mongodb-schema-required.yaml
+    - cat logs/validation_results
+    - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
 
-deploy-prod:
-  stage: deploy
+mongodb-schema-recommended:
+  stage: test
   script:
-    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+    - cat settings/gitlab-ci/mongodb-schema-recommended.yaml
+    - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/mongodb-schema-recommended.yaml
+    - cat logs/validation_results
+    - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
+  allow_failure: true
+
+rosprolog-required:
+  stage: test
+  script:
+    - cat settings/gitlab-ci/rosprolog-required.yaml
+    - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/rosprolog-required.yaml
+    - cat logs/validation_results
+    - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
+
+owl-consistency:
+  stage: test
+  script:
+    - cat settings/gitlab-ci/owl-consistency.yaml
+    - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/owl-consistency.yaml
+    - cat logs/validation_results
+    - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
