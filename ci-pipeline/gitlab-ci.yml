@@ -58,22 +58,40 @@ mongodb-schema-required:
     - cat logs/validation_results
     - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
 
-mongodb-schema-recommended:
-  stage: test
-  script:
-    - cat settings/gitlab-ci/mongodb-schema-recommended.yaml
-    - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/mongodb-schema-recommended.yaml
-    - cat logs/validation_results
-    - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
-  allow_failure: true
+# mongodb-schema-recommended:
+#   stage: test
+#   script:
+#     - cat settings/gitlab-ci/mongodb-schema-recommended.yaml
+#     - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/mongodb-schema-recommended.yaml
+#     - cat logs/validation_results
+#     - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
+#   allow_failure: true
 
 rosprolog-required:
   stage: test
   script:
-    - cat settings/gitlab-ci/rosprolog-required.yaml
-    - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/rosprolog-required.yaml
+    - cat settings/gitlab-ci/semantic-actions-required.yaml
+    - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/semantic-actions-required.yaml
     - cat logs/validation_results
     - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
+
+rosprolog-required:
+  stage: test
+  script:
+    - cat settings/gitlab-ci/semantic-other-required.yaml
+    - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/semantic-other-required.yaml
+    - cat logs/validation_results
+    - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
+
+rosprolog-required:
+  stage: test
+  script:
+    - cat settings/gitlab-ci/semantic-warn.yaml
+    - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/semantic-warn.yaml
+    - cat logs/validation_results
+    - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
+  allow_failure: true
+
 
 owl-consistency:
   stage: test
@@ -82,3 +100,4 @@ owl-consistency:
     - roslaunch neem_validator validator.launch path_to_neem:=$PATH_TO_NEEM workflow_file:=settings/gitlab-ci/owl-consistency.yaml
     - cat logs/validation_results
     - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
+  allow_failure: true
