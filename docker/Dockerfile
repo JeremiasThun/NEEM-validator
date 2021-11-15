@@ -4,6 +4,10 @@ SHELL ["/bin/bash", "-c"]
 ### Installing NEEM-Validator
 USER root
 
+# Making git builds accessible for ros
+RUN mkdir /builds
+RUN chown ros:ros /builds
+
 # DVC
 RUN wget https://dvc.org/download/linux-deb/dvc-2.7.4
 RUN mv dvc-2.7.4 dvc.deb
@@ -22,7 +26,8 @@ WORKDIR /home/ros/src
 RUN git clone https://gitlab.informatik.uni-bremen.de/bachelor-thesis/neem_validator.git
 
 COPY docker/source_ros.sh /source_ros.sh
-ENTRYPOINT ["/source_ros.sh"]
+
+ENTRYPOINT []
 
 
 #1 In Order to execute the neem-validator, run the following:
