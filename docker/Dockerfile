@@ -18,7 +18,7 @@ RUN python get-pip.py
 # Python dependencies for Validator
 RUN python -m pip install pymongo rdflib
 
-WORKDIR /home/validator/catkin_ws/src
+WORKDIR /home/ros/src
 RUN git clone https://gitlab.informatik.uni-bremen.de/bachelor-thesis/neem_validator.git
 
 COPY docker/source_ros.sh /source_ros.sh
