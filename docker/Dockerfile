@@ -1,36 +1,5 @@
-FROM ros:melodic
+FROM sasjonge/knowrob_cloud
 SHELL ["/bin/bash", "-c"]
-
-RUN apt-get update && apt-get install software-properties-common \
-                    wget curl -y
-
-# Prolog
-RUN add-apt-repository ppa:swi-prolog/stable &&\
-    apt-get update
-RUN apt-get install swi-prolog -y
-
-### Installing KnowRob
-RUN mkdir -p /home/validator/catkin_ws/src
-
-WORKDIR /home/validator/catkin_ws/src
-
-RUN apt install python-catkin-tools -y
-
-COPY docker/knowrob-base_modified.rosinstall /knowrob-base_modified.rosinstall
-
-RUN apt-get update &&\
-    source /ros_entrypoint.sh &&\
-    wstool init &&\
-    wstool merge /knowrob-base_modified.rosinstall &&\
-    wstool update &&\
-    yes | rosdep install --ignore-src --from-paths .
-
-ENV SWI_HOME_DIR=/usr/lib/swi-prolog
-
-# Mongo shell client
-WORKDIR /
-RUN wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2004-x86_64-100.5.0.deb
-RUN apt install ./mongodb-database*.deb
 
 ### Installing NEEM-Validator
 
@@ -49,12 +18,8 @@ RUN python -m pip install pymongo rdflib
 WORKDIR /home/validator/catkin_ws/src
 RUN apt install git -y
 RUN git clone https://gitlab.informatik.uni-bremen.de/bachelor-thesis/neem_validator.git
-WORKDIR /home/validator/catkin_ws
-RUN source /ros_entrypoint.sh && catkin build
-WORKDIR /home/validator/catkin_ws/src/neem_validator
 
-COPY docker/source_ros.sh /source_ros.sh
-ENTRYPOINT ["/source_ros.sh"]
+ENTRYPOINT ["/run_knowrob_local.sh"]
 
 
 #1 In Order to execute the neem-validator, run the following:
