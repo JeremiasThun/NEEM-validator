@@ -19,7 +19,8 @@ WORKDIR /home/validator/catkin_ws/src
 RUN apt install git -y
 RUN git clone https://gitlab.informatik.uni-bremen.de/bachelor-thesis/neem_validator.git
 
-ENTRYPOINT ["/run_knowrob_local.sh"]
+COPY docker/source_ros.sh /source_ros.sh
+ENTRYPOINT ["/source_ros.sh"]
 
 
 #1 In Order to execute the neem-validator, run the following:
