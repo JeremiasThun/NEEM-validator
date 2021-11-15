@@ -20,7 +20,7 @@ RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
 RUN python get-pip.py
 
 # Python dependencies for Validator
-RUN python -m pip install pymongo rdflib
+RUN python -m pip install pymongo rdflib ansi2html
 
 WORKDIR /home/ros/src
 RUN git clone https://gitlab.informatik.uni-bremen.de/bachelor-thesis/neem_validator.git
