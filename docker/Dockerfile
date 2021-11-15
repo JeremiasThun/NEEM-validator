@@ -15,7 +15,6 @@ RUN mkdir -p /home/validator/catkin_ws/src
 WORKDIR /home/validator/catkin_ws/src
 
 RUN apt install python-catkin-tools -y
-RUN echo "hi"
 
 COPY docker/knowrob-base_modified.rosinstall /knowrob-base_modified.rosinstall
 
