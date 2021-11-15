@@ -2,11 +2,14 @@ FROM sasjonge/knowrob_cloud
 SHELL ["/bin/bash", "-c"]
 
 ### Installing NEEM-Validator
+USER root
 
 # DVC
 RUN wget https://dvc.org/download/linux-deb/dvc-2.7.4
 RUN mv dvc-2.7.4 dvc.deb
 RUN apt install ./dvc.deb
+
+USER ros
 
 # Pip for Python 2.7
 RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
@@ -16,10 +19,9 @@ RUN python get-pip.py
 RUN python -m pip install pymongo rdflib
 
 WORKDIR /home/validator/catkin_ws/src
-RUN apt install git -y
 RUN git clone https://gitlab.informatik.uni-bremen.de/bachelor-thesis/neem_validator.git
 
-COPY docker/source_ros.sh /source_ros.sh
+COPY source_ros.sh /source_ros.sh
 ENTRYPOINT ["/source_ros.sh"]
 
 
