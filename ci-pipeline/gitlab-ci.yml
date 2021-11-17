@@ -34,7 +34,6 @@ NEEM-validator:
     - cd $PATH_TO_NEEM && dvc pull
     - cd $NEEM_VALIDATOR
     - git pull
-    - git checkout develop-ci && git pull
     - source /source_ros.sh && roslaunch $NEEM_VALIDATOR/launch/validator.launch path_to_neem:=$PATH_TO_NEEM
     - echo "############################\n############################\n############################"
     - cat logs/validation_results
