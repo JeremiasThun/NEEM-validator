@@ -1,0 +1,39 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:4.4.3-bionic
+    container_name: mongo_container
+    ports:
+      - 127.0.0.1:27018:27017
+    volumes:
+      - ./data:/neem_data
+    logging:
+      driver: "none"
+
+  # the KnowRob container
+  knowrob:
+    image: "14af3ab7ae45fb834fcbf764c10455353e6f92453a862"
+    container_name: knowrob_container
+    depends_on:
+      - 'mongo'
+    environment:
+      - KNOWROB_MONGODB_URI=mongodb://127.0.0.1:27018/?appname=knowrob
+      - KNOWROB_MONGO_HOST=127.0.0.1
+      - KNOWROB_MONGO_PORT=27018
+      - KNOWROB_MONGO_USER=
+      - KNOWROB_MONGO_PASS=
+    network_mode: host
+    entrypoint: ["/run_neem-validator.sh"]
+    volumes:
+      - ./logs:/home/ros/src/neem_validator/logs
+      - ./neem:/neem_data
+  #
+  #     # the KnowRob container
+  # jupyter_knowrob:
+  #   image: "sasjonge/jupyter-knowrob"
+  #   container_name: jupyter_knowrob
+  #   depends_on:
+  #     - 'knowrob'
+  #   network_mode: host
+  #   volumes:
+  #     - ./lectures:/lectures
