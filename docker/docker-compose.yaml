@@ -12,7 +12,7 @@ services:
 
   # the KnowRob container
   knowrob:
-    image: "14af3ab7ae45fb834fcbf764c10455353e6f92453a862"
+    image: "jeremiasthun/neem-validator"
     container_name: knowrob_container
     depends_on:
       - 'mongo'
