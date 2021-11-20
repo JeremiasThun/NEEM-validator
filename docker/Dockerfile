@@ -23,7 +23,7 @@ RUN python get-pip.py
 RUN python -m pip install pymongo rdflib ansi2html
 
 WORKDIR /home/ros/src
-RUN git clone https://gitlab.informatik.uni-bremen.de/bachelor-thesis/neem_validator.git
+RUN git clone https://github.com/JeremiasThun/NEEM-validator.git
 
 COPY source_ros.sh /source_ros.sh
 COPY run_neem-validator.sh /run_neem-validator.sh
