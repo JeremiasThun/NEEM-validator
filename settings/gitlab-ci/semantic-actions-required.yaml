@@ -1,0 +1,65 @@
+- Stages:
+  - semantic_annotation
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_action(Action), \+ has_time_interval(Action, _)
+    look_for_var: Action
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These actions don't have a time interval.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_event(Event), \+ has_time_interval(Event, _)
+    look_for_var: Event
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These events don't have a time interval.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_action(Action), \+ executes_task(Action, _)
+    look_for_var: Action
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These actions don't have any tasks.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_action(Action), \+ has_participant(Action, _)
+    look_for_var: Action
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These actions don't have any participants.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: has_participant(Action, 'NIL')
+    look_for_var: Action
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These actions have invalid participant 'NIL'.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_action(Action), \+ has_subevent(_, Action), \+ is_setting_for(_, Action).
+    look_for_var: Action
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: "These Actions are not linked with the episode."
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: holds(Event, dul:classifies, 'NIL')
+    look_for_var: Event
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These events classify 'NIL'.

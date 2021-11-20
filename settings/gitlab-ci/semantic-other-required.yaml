@@ -1,0 +1,29 @@
+- Stages:
+  semantic_annotation
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_physical_object(Object), \+ object_localization(Object, _)
+    look_for_var: Object
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These objects have no location.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: has_type(Joint, urdf:'Joint'), \+ has_parent_link(Joint, _), has_child_link(Joint, _)
+    look_for_var: Joint
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These joints have no proper links.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_setting_for(X, Y)
+    look_for_var: X
+    expect_var_to_be: .*
+    use_regex_in_result: True
+    fail_response: err
+    fail_reason: "You have to add the task that is executed during the action"

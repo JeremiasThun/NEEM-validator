@@ -1,0 +1,12 @@
+{
+  "graph": "string",
+  "s": "string",
+  "p": "string",
+  "o": "*",
+  "scope": {
+    "time" : {
+      "since" : "decimal",
+      "until" : "decimal"
+    }
+  }
+}

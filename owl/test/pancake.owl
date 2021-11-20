@@ -1,0 +1,1290 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://knowrob.org/kb/pancake.owl#"
+     xml:base="http://knowrob.org/kb/pancake.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:pancake="http://knowrob.org/kb/pancake.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:computable="http://knowrob.org/kb/computable.owl#"
+     xmlns:SOMA="http://www.ease-crc.org/ont/SOMA.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#"
+     xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#">
+    <owl:Ontology rdf:about="http://knowrob.org/kb/pancake.owl">
+        <owl:imports rdf:resource="package://knowrob/owl/knowrob.owl"/>
+        <owl:imports rdf:resource="http://www.ease-crc.org/ont/SOMA.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#processStarted -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/knowrob.owl#processStarted"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#definesProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#definesProcess"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#isProcessTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#isProcessTypeOf"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasBinding -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasBinding"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasBindingRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasBindingRole"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasStep -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasStep"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#after -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#after"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#before -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#before"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#during -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#during"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#finishedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#finishedBy"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasPhase -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasPhase"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#isPlanFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#isPlanFor"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#overlappedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#overlappedBy"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#startedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#startedBy"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#starts -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#starts"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesTask -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesTask"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParameter"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasTimeInterval"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRegionFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRegionFor"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#depthOfObject -->
+
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/knowrob.owl#depthOfObject"/>
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#heightOfObject -->
+
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/knowrob.owl#heightOfObject"/>
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#widthOfObject -->
+
+    <owl:DatatypeProperty rdf:about="http://knowrob.org/kb/knowrob.owl#widthOfObject"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasIntervalBegin -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasIntervalBegin"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasIntervalEnd -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasIntervalEnd"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#BakingAPancake -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#BakingAPancake">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#CommitedObject"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#Dough"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#CreatedObject"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#MyPancake"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#CrackingAnEgg -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#CrackingAnEgg">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#CreatedObject"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#EggShell"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#CreatedObject"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#EggYolk"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DestroyedObject"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#Egg"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Dough -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#Dough">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Egg -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#Egg">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#EggShell -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#EggShell">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#EggYolk -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#EggYolk">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#FlippingAPancake -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#FlippingAPancake">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Tool"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Spatula"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#HeatingProcess -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#HeatingProcess">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ProcessType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#MakingPancakes -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#MakingPancakes">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Milk -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#Milk">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#MixPancakeDough -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#MixPancakeDough">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#CommitedObject"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#Egg"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#CommitedObject"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#Milk"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#CommitedObject"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#WheatFlour"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#CreatedObject"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#Dough"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#MyPancake -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#MyPancake">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Pancake"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#PancakeMaker -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#PancakeMaker">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#PouringOntoPancakeMaker -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#PouringOntoPancakeMaker">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#CommitedObject"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#Dough"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Destination"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#PancakeMaker"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#TurningOnHeatingDevice -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#TurningOnHeatingDevice">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParameter"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Setpoint"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#DeviceTurnedOn"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#AlteredObject"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                                <owl:allValuesFrom rdf:resource="http://knowrob.org/kb/pancake.owl#PancakeMaker"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>todo: state that the goal is that the DeviceState quality of the panccake maker takes a value from DeviceStateOff</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#WheatFlour -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/pancake.owl#WheatFlour">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#AlteredObject -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#AlteredObject"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#CommitedObject -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#CommitedObject"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#CreatedObject -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#CreatedObject"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#Destination -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Destination"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#DestroyedObject -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DestroyedObject"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#DeviceState -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DeviceState"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#DeviceStateRange -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DeviceStateRange">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRegionFor"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#DeviceState"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#DeviceTurnedOff -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DeviceTurnedOff"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#DeviceTurnedOn -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DeviceTurnedOn"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#HasQualityRegion -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#HasQualityRegion"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#MovedObject -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#MovedObject"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#Pancake -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Pancake"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#Setpoint -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Setpoint"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#Spatula -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Spatula"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#Tool -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Tool"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#Creation -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Creation"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#ProcessFlow -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#ProcessFlow"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#ProcessType -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#ProcessType"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalBody"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Substance"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Baking_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Baking_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#BakingAPancake"/>
+        <SOMA:after rdf:resource="http://knowrob.org/kb/pancake.owl#Mixing_0"/>
+        <SOMA:finishedBy rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Proc"/>
+        <SOMA:startedBy rdf:resource="http://knowrob.org/kb/pancake.owl#TurningOn_0"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Dough"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Pancake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Baking_0_Dough -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Baking_0_Dough">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#CommitedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Baking_0_Pancake -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Baking_0_Pancake">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#CreatedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Baking_0_Proc -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Baking_0_Proc">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Creation"/>
+        <SOMA:isProcessTypeOf rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Proc_Dough"/>
+        <SOMA:isProcessTypeOf rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Proc_Pancake"/>
+        <SOMA:startedBy rdf:resource="http://knowrob.org/kb/pancake.owl#Pouring_0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Baking_0_Proc_Dough -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Baking_0_Proc_Dough">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#CommitedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Baking_0_Proc_Pancake -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Baking_0_Proc_Pancake">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#CreatedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Cracking_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Cracking_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#CrackingAnEgg"/>
+        <SOMA:during rdf:resource="http://knowrob.org/kb/pancake.owl#Mixing_0"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#Cracking_0_Egg"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#Cracking_0_Shell"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#Cracking_0_Yolk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Cracking_0_Egg -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Cracking_0_Egg">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#DestroyedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Cracking_0_Shell -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Cracking_0_Shell">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#CreatedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Cracking_0_Yolk -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Cracking_0_Yolk">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#CreatedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Dough_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Dough_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#Dough"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#EggYolk_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#EggYolk_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#EggYolk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Egg_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Egg_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#Egg"/>
+        <knowrob:depthOfObject rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.05</knowrob:depthOfObject>
+        <knowrob:heightOfObject rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.05</knowrob:heightOfObject>
+        <knowrob:widthOfObject rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.05</knowrob:widthOfObject>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#FlippingAPancake_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#FlippingAPancake_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#FlippingAPancake"/>
+        <SOMA:after rdf:resource="http://knowrob.org/kb/pancake.owl#Pouring_0"/>
+        <SOMA:during rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Proc"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#FlippingInput_Transient0"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#FlippingTool_Spatula0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#FlippingInput_Transient0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#FlippingInput_Transient0">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#MovedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#FlippingTool_Spatula0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#FlippingTool_Spatula0">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Tool"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#MakingPancakes_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#MakingPancakes_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#MakingPancakes"/>
+        <SOMA:finishedBy rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0"/>
+        <SOMA:startedBy rdf:resource="http://knowrob.org/kb/pancake.owl#Mixing_0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Milk_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Milk_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#Milk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Mixing_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Mixing_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#MixPancakeDough"/>
+        <SOMA:before rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#Mixing_0_Dough"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#Mixing_0_Egg"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#Mixing_0_Flour"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#Mixing_0_Milk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Mixing_0_Dough -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Mixing_0_Dough">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#CreatedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Mixing_0_Egg -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Mixing_0_Egg">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#CommitedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Mixing_0_Flour -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Mixing_0_Flour">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#CommitedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Mixing_0_Milk -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Mixing_0_Milk">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#CommitedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#PancakeMaker_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#PancakeMaker_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#PancakeMaker"/>
+        <DUL:hasQuality rdf:resource="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_DeviceState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#PancakeMaker_0_DeviceState -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_DeviceState">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#DeviceState"/>
+        <DUL:hasRegion rdf:resource="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_RegionOff"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#PancakeMaker_0_GoalOn -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_GoalOn">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Goal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#PancakeMaker_0_PositionOff -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_PositionOff">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#HasQualityRegion"/>
+        <DUL:hasQuality rdf:resource="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_DeviceState"/>
+        <DUL:hasRegion rdf:resource="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_RegionOff"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#PancakeMaker_0_PositionOn -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_PositionOn">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#HasQualityRegion"/>
+        <DUL:hasQuality rdf:resource="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_DeviceState"/>
+        <DUL:hasRegion rdf:resource="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_RegionOn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#PancakeMaker_0_RegionOff -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_RegionOff">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#DeviceTurnedOff"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#PancakeMaker_0_RegionOn -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_RegionOn">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#DeviceTurnedOn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Pouring_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Pouring_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#PouringOntoPancakeMaker"/>
+        <SOMA:after rdf:resource="http://knowrob.org/kb/pancake.owl#TurningOn_0"/>
+        <SOMA:before rdf:resource="http://knowrob.org/kb/pancake.owl#FlippingAPancake_0"/>
+        <SOMA:starts rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Proc"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#Pouring_0_Destination"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#Pouring_0_Dough"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Pouring_0_Destination -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Pouring_0_Destination">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Destination"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Pouring_0_Dough -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Pouring_0_Dough">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#MovedObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#Spatula_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#Spatula_0">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Spatula"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#TurningOn_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#TurningOn_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#TurningOnHeatingDevice"/>
+        <SOMA:before rdf:resource="http://knowrob.org/kb/pancake.owl#Pouring_0"/>
+        <DUL:hasParameter rdf:resource="http://knowrob.org/kb/pancake.owl#TurningOn_0_Setpoint"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/pancake.owl#TurningOn_0_PancakeMaker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#TurningOn_0_PF -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#TurningOn_0_PF">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ProcessFlow"/>
+        <DUL:definesTask rdf:resource="http://knowrob.org/kb/pancake.owl#TurningOn_0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#TurningOn_0_PancakeMaker -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#TurningOn_0_PancakeMaker">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Tool"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#TurningOn_0_Setpoint -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#TurningOn_0_Setpoint">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Setpoint"/>
+        <DUL:classifies rdf:resource="http://knowrob.org/kb/pancake.owl#PancakeMaker_0_RegionOn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#TurningOn_Act_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#TurningOn_Act_0">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Action"/>
+        <DUL:hasParticipant rdf:resource="http://knowrob.org/kb/pancake.owl#PancakeMaker_0"/>
+        <DUL:hasTimeInterval rdf:resource="http://knowrob.org/kb/pancake.owl#TurningOn_TI_0"/>
+        <DUL:isClassifiedBy rdf:resource="http://knowrob.org/kb/pancake.owl#TurningOn_0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#TurningOn_TI_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#TurningOn_TI_0">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval"/>
+        <SOMA:hasIntervalBegin rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</SOMA:hasIntervalBegin>
+        <SOMA:hasIntervalEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</SOMA:hasIntervalEnd>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#WF_Baking_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#WF_Baking_0">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/pancake.owl#WF_Baking_0_Dough"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/pancake.owl#WF_Baking_0_PancakeMaker"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/pancake.owl#WF_Baking_0_Proc_Dough"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/pancake.owl#WF_Baking_0_Proc_Pancake"/>
+        <SOMA:hasStep rdf:resource="http://knowrob.org/kb/pancake.owl#FlippingAPancake_0"/>
+        <SOMA:hasStep rdf:resource="http://knowrob.org/kb/pancake.owl#Pouring_0"/>
+        <SOMA:hasStep rdf:resource="http://knowrob.org/kb/pancake.owl#TurningOn_0"/>
+        <SOMA:hasPhase rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Proc"/>
+        <SOMA:isPlanFor rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#WF_Baking_0_Dough -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#WF_Baking_0_Dough">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Dough"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#Pouring_0_Dough"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#WF_Baking_0_PancakeMaker -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#WF_Baking_0_PancakeMaker">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#Pouring_0_Destination"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#TurningOn_0_PancakeMaker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#WF_Baking_0_Proc_Dough -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#WF_Baking_0_Proc_Dough">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Dough"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Proc_Dough"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#WF_Baking_0_Proc_Pancake -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#WF_Baking_0_Proc_Pancake">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Pancake"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Proc_Pancake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#WF_MakingPancakes_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#WF_MakingPancakes_0">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/pancake.owl#WF_MakingPancakes_0_Dough"/>
+        <SOMA:hasStep rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0"/>
+        <SOMA:hasStep rdf:resource="http://knowrob.org/kb/pancake.owl#Mixing_0"/>
+        <SOMA:isPlanFor rdf:resource="http://knowrob.org/kb/pancake.owl#MakingPancakes_0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#WF_MakingPancakes_0_Dough -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#WF_MakingPancakes_0_Dough">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#Baking_0_Dough"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#Mixing_0_Dough"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#WF_Mixing_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#WF_Mixing_0">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/pancake.owl#WF_Mixing_0_Egg"/>
+        <SOMA:hasStep rdf:resource="http://knowrob.org/kb/pancake.owl#Cracking_0"/>
+        <SOMA:isPlanFor rdf:resource="http://knowrob.org/kb/pancake.owl#Mixing_0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#WF_Mixing_0_Egg -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#WF_Mixing_0_Egg">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#Cracking_0_Egg"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/pancake.owl#Mixing_0_Egg"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/pancake.owl#WheatFlour_0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/pancake.owl#WheatFlour_0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/pancake.owl#WheatFlour"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

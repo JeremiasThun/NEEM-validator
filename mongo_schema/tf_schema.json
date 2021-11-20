@@ -1,0 +1,21 @@
+{
+  "header": {
+    "seq": "int",
+    "stamp": "date",
+    "frame_id": "string"
+  },
+  "child_frame_id": "string",
+  "transform": {
+    "translation": {
+      "x": "double",
+      "y": "double",
+      "z": "double"
+    },
+    "rotation": {
+      "x": "double",
+      "y": "double",
+      "z": "double",
+      "w": "double"
+    }
+  }
+}

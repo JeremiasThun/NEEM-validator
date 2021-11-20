@@ -1,0 +1,27 @@
+- Stages:
+  semantic_annotation
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_location(Location), is_action(Action), has_participant(Action, Location). # does this really mark an error?
+    look_for_var: Location
+    expect_var_to_be: False
+    fail_response: warn
+    fail_reason: "This location is also participant in an action"
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: has_type(AgentRole, soma:'AgentRole'), has_role(Agent, AgentRole)
+    look_for_var: Agent
+    expect_var_to_be: .*
+    use_regex_in_result: True
+    fail_response: warn
+    fail_reason: "There is no agent in this episode"
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: has_participant(_, Participant), \+ has_role(Participant, _)
+    look_for_var: Participant
+    expect_var_to_be: False
+    fail_response: warn
+    fail_reason: "These participants don't have a role"

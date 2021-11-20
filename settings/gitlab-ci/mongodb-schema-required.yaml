@@ -1,0 +1,12 @@
+- Stages:
+  - SchemaCheck
+
+- SchemaCheck:
+    file: tf_schema.json
+    collection: tf
+    fail_response: err
+
+- SchemaCheck:
+    file: triples_schema.json
+    collection: triples
+    fail_response: err

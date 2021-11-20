@@ -1,0 +1,51 @@
+- Stages:
+  - clear_mongo_collections
+  - FilesystemCheck
+  - RosprologCheck
+
+# clear_mongo_collections
+- MongoCheck:
+    stage: clear_mongo_collections
+    collection: triples
+    command: drop
+    fail_response: warn
+
+- MongoCheck:
+    stage: clear_mongo_collections
+    collection: tf
+    command: drop
+    fail_response: warn
+
+- MongoCheck:
+    stage: clear_mongo_collections
+    collection: inferred
+    command: drop
+    fail_response: warn
+
+- MongoCheck:
+    stage: clear_mongo_collections
+    collection: annotations
+    command: drop
+    fail_response: warn
+
+- FilesystemCheck:
+    file_to_look_for: tf
+    fail_response: warn
+
+- FilesystemCheck:
+    file_to_look_for: triples
+    fail_response: fatal
+
+- FilesystemCheck:
+    extension: .bson
+    store_result_as: FOUND_BSONS
+    fail_response: err
+
+- RosprologCheck:
+    stage: mongorestore
+    query: member(Bson, $$FOUND_BSONS), nv_mng_restore(Bson, Response).
+    look_for_var: Response
+    use_regex_in_result: True
+    expect_var_to_be: .\d+\s\D+0\s\D+
+    fail_response: fatal
+    solutions: all

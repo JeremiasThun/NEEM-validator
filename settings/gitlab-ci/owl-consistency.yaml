@@ -1,0 +1,4 @@
+- Stages: OWLReasonerCheck
+
+- OWLReasonerCheck:
+    fail_response: warn

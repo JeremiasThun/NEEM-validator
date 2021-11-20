@@ -1,0 +1,8 @@
+.DS_Store
+owl/neem-triples.owl
+owl/owl*.owl
+logs/*
+hermit/knowrob.owl
+hermit/catalog-v001.xml
+owl/catalog-v001.xml
+*.pyc

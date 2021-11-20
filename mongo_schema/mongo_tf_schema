@@ -1,0 +1,72 @@
+{
+  "bsonType": "object",
+  "required": [ "header", "child_frame_id", "transform"],
+  "properties": {
+     "header": {
+        "bsonType": "object",
+        "required": [ "seq", "stamp", "frame_id" ],
+        "properties": {
+          "seq": {
+            "bsonType": "int",
+            "description": "consecutively increasing ID"
+          },
+          "stamp": {
+            "bsonType": "date",
+            "description": "time stamp of this transform"
+          }
+        }
+     },
+     "child_frame_id": {
+        "bsonType": "string",
+        "description": "coordinate frame of this transform"
+     },
+     "transform": {
+        "bsonType": "object",
+        "required": ["translation", "rotation"],
+        "properties": {
+          "tanslation": {
+            "bsonType": "object",
+            "required": ["x", "y", "z"],
+            "description": "position of child frame with respect to parent frame in meters",
+            "properties": {
+              "x": {
+                "bsonType": "double",
+                "description": "x axis translation"
+              },
+              "y": {
+                "bsonType": "double",
+                "description": "y axis translation"
+              },
+              "z": {
+                "bsonType": "double",
+                "description": "z axis tanslation"
+              }
+            }
+          },
+          "rotation": {
+            "bsonType": "object",
+            "required": ["x", "y", "z", "w"],
+            "description": "Rotation in Quaternion",
+            "properties": {
+              "x": {
+                "bsonType": "double",
+                "description": "x component of quaternion"
+              },
+              "y": {
+                "bsonType": "double",
+                "description": "y component of quaternion"
+              },
+              "z": {
+                "bsonType": "double",
+                "description": "z component of quaternion"
+              },
+              "w": {
+                "bsonType": "double",
+                "description": "z component of quaternion"
+              }
+            }
+          }
+        }
+     }
+  }
+}

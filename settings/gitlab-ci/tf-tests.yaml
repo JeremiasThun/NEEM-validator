@@ -1,0 +1,10 @@
+- Stages:
+  tf_tests
+
+- RosprologCheck:
+    stage: tf_tests
+    query: tf_roots(RootFrames)
+    look_for_var: RootFrames
+    expect_var_to_be: ['map']
+    fail_response: err
+    fail_reason: "The TF tree is broken and/or doesn't have 'map' as root frame"

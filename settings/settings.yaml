@@ -1,0 +1,30 @@
+
+RosprologCheck:
+  local_prolog_modules:
+    - src/prolog/neem_validation.pl
+
+# Mongo settings are set at different places (because that's the way, KnowRob does):
+#   MongoCheck:
+#     mongo:
+#       port: -> shell environment variable: KNOWROB_MONGO_PORT
+#       ip: -> shell environment variable: KNOWROB_MONGO_HOST
+#       user: -> shell environment variable: KNOWROB_MONGO_USER
+#       pass: -> shell environment variable: KNOWROB_MONGO_PASS
+#       db: -> see knowrob_config.pl in this folder: setting(mng_client:db_name, YOUR_DB).
+
+SchemaCheck:
+  local_schema_path: mongo_schema/
+
+FileserverCheck:
+  host: neem-1.informatik.uni-bremen.de
+  kinematics_path: https://neem-1.informatik.uni-bremen.de/data/kinematics/
+
+OWLReasonerCheck:
+  namespaces:
+    rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns
+    owl: http://www.w3.org/2002/07/owl
+    xsd: http://www.w3.org/2001/XMLSchema
+    rdfs: http://www.w3.org/2000/01/rdf-schema
+    owl2xml: http://www.w3.org/2006/12/owl2-xml
+    knowrob: http://knowrob.org/kb/knowrob.owl
+    SOMA: http://www.ease-crc.org/ont/SOMA.owl

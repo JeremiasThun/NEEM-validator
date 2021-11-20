@@ -1,0 +1,6 @@
+- Stages:
+#  - SchemaCheck
+
+- SchemaCheck:
+  - file: triples_schema.json
+    collection: triples

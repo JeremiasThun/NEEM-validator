@@ -1,0 +1,6 @@
+- Stages:
+  - FileserverCheck
+
+- FileserverCheck:
+    find_FILES_in: has_kinematics_file(_, FILES, 'URDF')
+    fail_response: err

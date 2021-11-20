@@ -1,0 +1,14 @@
+<launch>
+  <arg name="path_to_neem" />
+  <arg name="terminate" default="true" />
+  <arg name="logging" default="false" />
+  <arg name="workflow_file" default="settings/pipeline_workflow.yaml" />
+
+  <include file="$(find neem_validator)/launch/knowrob.launch" />
+
+  <node name="neem_validator" required="$(arg terminate)" pkg="neem_validator" type="pipeline.py" output="screen" clear_params="true">
+    <param name="path_to_neem" value="$(arg path_to_neem)" />
+    <param name="workflow_file" value="$(arg workflow_file)" />
+    <param name="logging" value="$(arg logging)" />
+  </node>
+</launch>

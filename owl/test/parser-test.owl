@@ -1,0 +1,1014 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://knowrob.org/kb/parser-test.owl#"
+     xml:base="http://knowrob.org/kb/parser-test.owl"
+     xmlns:ptest="http://knowrob.org/kb/parser-test.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:knowrob="http://knowrob.org/kb/knowrob.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:SOMA="http://www.ease-crc.org/ont/SOMA.owl#">
+    <owl:Ontology rdf:about="http://knowrob.org/kb/parser-test.owl">
+        <owl:imports rdf:resource="package://knowrob/owl/knowrob.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/knowrob.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="http://knowrob.org/kb/knowrob.owl#contains"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#definesProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#definesProcess"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#isProcessOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#isProcessOf"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasBinding -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasBinding"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasBindingFiller -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasBindingFiller"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasBindingRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasBindingRole"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasFirstStep -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasFirstStep"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasStep -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasStep"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#before -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#before"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#during -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#during"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#finishedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#finishedBy"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#finishes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#finishes"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#isPlanFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#isPlanFor"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#overlappedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#overlappedBy"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#overlappedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#overlappedOn"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#simultaneous -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#simultaneous"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#startedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#startedBy"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#GraspMotion -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#GraspMotion">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/parser-test.owl#TestMotion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#isProcessOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/parser-test.owl#TestTask"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/parser-test.owl#TestTask"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickPlace -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#PickPlace">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/parser-test.owl#TestTask"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickingUp -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#PickingUp">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/parser-test.owl#TestTask"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#Placing">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/parser-test.owl#TestTask"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isTaskOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#ReleaseMotion -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#ReleaseMotion">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/parser-test.owl#TestMotion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#isProcessOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Supporting -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#Supporting">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/parser-test.owl#TestForceEvent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#isProcessOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#TestActuated -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#TestActuated">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/parser-test.owl#TestRole"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#TestActuator -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#TestActuator">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/parser-test.owl#TestRole"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies"/>
+                <owl:allValuesFrom rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#PhysicalEffector"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#TestForceEvent -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#TestForceEvent">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#ProcessType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#TestMotion -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#TestMotion">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Motion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#TestRole -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#TestRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#TestTask -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#TestTask">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Touching -->
+
+    <owl:Class rdf:about="http://knowrob.org/kb/parser-test.owl#Touching">
+        <rdfs:subClassOf rdf:resource="http://knowrob.org/kb/parser-test.owl#TestForceEvent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#isProcessOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#isProcessOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#Motion -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Motion"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#PhysicalEffector -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#PhysicalEffector"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Task"/>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+        <SOMA:definesProcess rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_GraspMotion"/>
+        <SOMA:definesProcess rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Touching"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuated0"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuator0"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuator1"/>
+        <SOMA:isPlanFor rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Tsk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuated -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuated">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuated0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuated0">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Touchee"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuator -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuator">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuator0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuator0">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Toucher"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuator1 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuator1">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_MovedGripper"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0_GraspMotion -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_GraspMotion">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#GraspMotion"/>
+        <DUL:isRelatedToConcept rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_MovedGripper"/>
+        <SOMA:overlappedOn rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Touching"/>
+        <SOMA:simultaneous rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Tsk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0_MovedGripper -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_MovedGripper">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Touchee -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Touchee">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Toucher -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Toucher">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Touching -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Touching">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#Touching"/>
+        <DUL:isRelatedToConcept rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Touchee"/>
+        <DUL:isRelatedToConcept rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Toucher"/>
+        <SOMA:overlappedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_GraspMotion"/>
+        <SOMA:overlappedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Tsk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Tsk -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Tsk">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping"/>
+        <SOMA:overlappedOn rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Touching"/>
+        <SOMA:simultaneous rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_GraspMotion"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuated"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping_WF0_Actuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+        <SOMA:definesProcess rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Support"/>
+        <SOMA:definesProcess rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Touching"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuated0"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuated1"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuator0"/>
+        <SOMA:isPlanFor rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Tsk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuated -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuated">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuated0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuated0">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Touchee"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuated1 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuated1">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Supported"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuator -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuator">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuator0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuator0">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Toucher"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Support -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Support">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#Supporting"/>
+        <DUL:isRelatedToConcept rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Supported"/>
+        <SOMA:meets rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Tsk"/>
+        <SOMA:overlappedOn rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Touching"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Supported -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Supported">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Touchee -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Touchee">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Toucher -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Toucher">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Touching -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Touching">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#Touching"/>
+        <SOMA:containsEvent rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Tsk"/>
+        <DUL:isRelatedToConcept rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Touchee"/>
+        <DUL:isRelatedToConcept rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Toucher"/>
+        <SOMA:overlappedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Support"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Tsk -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Tsk">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting"/>
+        <SOMA:during rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Touching"/>
+        <SOMA:metBy rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Support"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuated"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting_WF0_Actuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickPlace_WF0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Actuated0"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Actuated1"/>
+        <SOMA:hasFirstStep rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Step0"/>
+        <SOMA:hasStep rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Step1"/>
+        <SOMA:isPlanFor rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Tsk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Actuated -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Actuated">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Actuated0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Actuated0">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Picked"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Actuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Actuated1 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Actuated1">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Placed"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Actuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Picked -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Picked">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Placed -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Placed">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Step0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Step0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp"/>
+        <SOMA:before rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Step1"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Grasped"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Step1 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Step1">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Placed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Tsk -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Tsk">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace"/>
+        <SOMA:finishedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Step1"/>
+        <SOMA:startedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Step0"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#PickPlace_WF0_Actuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickingUp_WF0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Actuated0"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Actuated1"/>
+        <SOMA:hasFirstStep rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Step0"/>
+        <SOMA:hasStep rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Step1"/>
+        <SOMA:isPlanFor rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Tsk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Actuated -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Actuated">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Actuated0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Actuated0">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Grasped"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Actuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Actuated1 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Actuated1">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Lifted"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Actuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Grasped -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Grasped">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Lifted -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Lifted">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Step0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Step0">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#Grasping"/>
+        <SOMA:before rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Step1"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Grasped"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Step1 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Step1">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#Lifting"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Lifted"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Tsk -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Tsk">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp"/>
+        <SOMA:finishedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Step1"/>
+        <SOMA:startedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Step0"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#PickingUp_WF0_Actuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Workflow"/>
+        <SOMA:definesProcess rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_ReleaseMotion"/>
+        <SOMA:definesProcess rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Support"/>
+        <SOMA:definesProcess rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Touching"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuated0"/>
+        <SOMA:hasBinding rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuated1"/>
+        <SOMA:isPlanFor rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Tsk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuated -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuated">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuated0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuated0">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Touchee"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuated1 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuated1">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Supported"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuator -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuator">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuator0 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuator0">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Toucher"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuator1 -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuator1">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RoleRoleBinding"/>
+        <SOMA:hasBindingFiller rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_MovedGripper"/>
+        <SOMA:hasBindingRole rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_MovedGripper -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_MovedGripper">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_ReleaseMotion -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_ReleaseMotion">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#ReleaseMotion"/>
+        <DUL:isRelatedToConcept rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_MovedGripper"/>
+        <SOMA:during rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Support"/>
+        <SOMA:finishes rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Tsk"/>
+        <SOMA:overlappedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Touching"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Support -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Support">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#Supporting"/>
+        <SOMA:containsEvent rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_ReleaseMotion"/>
+        <DUL:isRelatedToConcept rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Supported"/>
+        <SOMA:overlappedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Touching"/>
+        <SOMA:overlappedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Tsk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Supported -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Supported">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Touchee -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Touchee">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuated"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Toucher -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Toucher">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#TestActuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Touching -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Touching">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#Touching"/>
+        <DUL:isRelatedToConcept rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Touchee"/>
+        <DUL:isRelatedToConcept rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Toucher"/>
+        <SOMA:overlappedOn rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_ReleaseMotion"/>
+        <SOMA:overlappedOn rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Support"/>
+        <SOMA:overlappedOn rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Tsk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://knowrob.org/kb/parser-test.owl#Placing_WF0_Tsk -->
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Tsk">
+        <rdf:type rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing"/>
+        <SOMA:finishedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_ReleaseMotion"/>
+        <SOMA:overlappedBy rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Touching"/>
+        <SOMA:overlappedOn rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Support"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuated"/>
+        <DUL:isTaskOf rdf:resource="http://knowrob.org/kb/parser-test.owl#Placing_WF0_Actuator"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#TestTable">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#TestObject">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalArtifact"/>
+    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://knowrob.org/kb/parser-test.owl#TestHand">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#PhysicalEffector"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

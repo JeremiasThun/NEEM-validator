@@ -1,0 +1,211 @@
+### order ###
+- Stages:
+  - FilesystemCheck
+  - clear_mongo_collections
+  - mongorestore
+  - FileserverCheck
+  - SchemaCheck
+  - tf_tests
+  - semantic_annotation
+  - owl_consistency_details
+  - OWLReasonerCheck
+
+##### setup requirements #######
+
+# FilesystemCheck
+- FilesystemCheck:
+    file_to_look_for: tf
+    fail_response: warn
+
+- FilesystemCheck:
+    file_to_look_for: triples
+    fail_response: fatal
+
+- FilesystemCheck:
+    extension: .bson
+    store_result_as: FOUND_BSONS
+    fail_response: err
+
+# clear_mongo_collections
+- MongoCheck:
+    stage: clear_mongo_collections
+    collection: triples
+    command: drop
+    fail_response: warn
+
+- MongoCheck:
+    stage: clear_mongo_collections
+    collection: tf
+    command: drop
+    fail_response: warn
+
+- MongoCheck:
+    stage: clear_mongo_collections
+    collection: inferred
+    command: drop
+    fail_response: warn
+
+- MongoCheck:
+    stage: clear_mongo_collections
+    collection: annotations
+    command: drop
+    fail_response: warn
+
+# mongorestore
+- RosprologCheck:
+    stage: mongorestore
+    query: member(Bson, $$FOUND_BSONS), nv_mng_restore(Bson, Response).
+    look_for_var: Response
+    use_regex_in_result: True
+    expect_var_to_be: .* # on ubuntu this might be a good regex: .\d+\s\D+0\s\D+
+    fail_response: fatal
+    solutions: all
+
+####################################################
+####################################################
+####################################################
+
+# FileserverCheck
+- FileserverCheck:
+    find_FILES_in: has_kinematics_file(_, FILES, 'URDF')
+    fail_response: err
+
+# SchemaCheck
+- SchemaCheck:
+    file: tf_schema.json
+    collection: tf
+    fail_response: err
+
+- SchemaCheck:
+    file: triples_schema.json
+    collection: triples
+    fail_response: err
+
+# semantic_annotation
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_action(Action), \+ has_time_interval(Action, _)
+    look_for_var: Action
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These actions don't have a time interval.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_event(Event), \+ has_time_interval(Event, _)
+    look_for_var: Event
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These events don't have a time interval.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_action(Action), \+ executes_task(Action, _)
+    look_for_var: Action
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These actions don't have any tasks.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_action(Action), \+ has_participant(Action, _)
+    look_for_var: Action
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These actions don't have any participants.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: has_participant(Action, 'NIL')
+    look_for_var: Action
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These actions have invalid participant 'NIL'.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_action(Action), \+ has_subevent(_, Action), \+ is_setting_for(_, Action).
+    look_for_var: Action
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: "These Actions are not linked with the episode."
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: holds(Event, dul:classifies, 'NIL')
+    look_for_var: Event
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These events classify 'NIL'.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_physical_object(Object), \+ object_localization(Object, _)
+    look_for_var: Object
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These objects have no location.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: has_type(Joint, urdf:'Joint'), \+ has_parent_link(Joint, _), has_child_link(Joint, _)
+    look_for_var: Joint
+    solutions: 5
+    expect_var_to_be: False
+    fail_response: err
+    fail_reason: These joints have no proper links.
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_setting_for(X, Y)
+    look_for_var: X
+    expect_var_to_be: .*
+    use_regex_in_result: True
+    fail_response: err
+    fail_reason: "You have to add the task that is executed during the action"
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: is_location(Location), is_action(Action), has_participant(Action, Location). # does this really mark an error?
+    look_for_var: Location
+    expect_var_to_be: False
+    fail_response: warn
+    fail_reason: "This location is also participant in an action"
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: has_type(AgentRole, soma:'AgentRole'), has_role(Agent, AgentRole)
+    look_for_var: Agent
+    expect_var_to_be: .*
+    use_regex_in_result: True
+    fail_response: warn
+    fail_reason: "There is no agent in this episode"
+
+- RosprologCheck:
+    stage: semantic_annotation
+    query: has_participant(_, Participant), \+ has_role(Participant, _)
+    look_for_var: Participant
+    expect_var_to_be: False
+    fail_response: warn
+    fail_reason: "These participants don't have a role"
+
+# tf_tests
+- RosprologCheck:
+    stage: tf_tests
+    query: tf_roots(RootFrames)
+    look_for_var: RootFrames
+    expect_var_to_be: \['\w*'\]
+    fail_response: err
+    fail_reason: "The TF tree is broken and/or doesn't have 'map' as root frame"
+
+# OWLReasonerCheck
+- OWLReasonerCheck:
+    fail_response: warn
