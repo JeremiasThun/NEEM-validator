@@ -26,11 +26,12 @@ NEEM-validator:
     - PATH_TO_NEEM=$PWD
     - KNOWROB_MONGO_USER=
     - KNOWROB_MONGO_PASS=
-    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
-    - eval $(ssh-agent -s)
-    - ssh-add $DVC_KEY
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
+   # This section can be activated for DVC with SSH
+   # - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+   # - eval $(ssh-agent -s)
+   # - ssh-add $DVC_KEY
+   # - mkdir -p ~/.ssh
+   # - chmod 700 ~/.ssh
     - cd $PATH_TO_NEEM && dvc pull
     - cd $NEEM_VALIDATOR
     - git pull
