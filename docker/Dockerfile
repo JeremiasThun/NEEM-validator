@@ -25,8 +25,8 @@ RUN python -m pip install pymongo rdflib ansi2html
 WORKDIR /home/ros/src
 RUN git clone https://github.com/JeremiasThun/NEEM-validator.git
 
-COPY source_ros.sh /source_ros.sh
-COPY run_neem-validator.sh /run_neem-validator.sh
+COPY docker/source_ros.sh /source_ros.sh
+COPY docker/run_neem-validator.sh /run_neem-validator.sh
 
 USER root
 RUN chown ros:ros /run_neem-validator.sh
