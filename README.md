@@ -45,4 +45,4 @@ The workflow file defines the checks that are called aswell as their configurati
 
 Every check can be called multiple times with different configurations. 
 
-The `Stages` entry can occur only once and determines the order in which the checks are called.
+The `Stages` entry may occur only once and determines the order in which the checks are called.
