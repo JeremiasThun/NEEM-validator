@@ -19,7 +19,9 @@ Python 2.7 libraries:
 Pull this repository into the `src` directory of KnowRob's catkin workspace (e.g `~/catkin_ws/src`) and source the workspace:
 
 ```
-source ~/catkin/devel/setup.bash
+cd ~/catkin_ws
+catkin_make
+source ~/catkin_ws/devel/setup.bash
 ```
 
 To start the NEEM validator, you can run roslaunch with the following arguments:
