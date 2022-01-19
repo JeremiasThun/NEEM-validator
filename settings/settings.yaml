@@ -1,7 +1,7 @@
 
 RosprologCheck:
   local_prolog_modules:
-    - src/prolog/neem_validation.pl
+    - src/checks/prolog/neem_validation.pl
 
 # Mongo settings are set at different places (because that's the way, KnowRob does):
 #   MongoCheck:

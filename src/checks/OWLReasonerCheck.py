@@ -230,11 +230,11 @@ class OWLReasonerCheck(NV_Check):
 
         ####### Uglify #######
 
-        self.query_str = "uglify OWL files to run HermiT on them, using src/prolog/uglify.pl"
+        self.query_str = "uglify OWL files to run HermiT on them, using src/checks/prolog/uglify.pl"
         expected_result = "No Errors"
         actual_result = expected_result
 
-        path = self.path_to_this_pkg + "/src/prolog/uglify.pl"
+        path = self.path_to_this_pkg + "/src/checks/prolog/uglify.pl"
         rosprologconfig = {}
         rosprologconfig['solutions'] = 1
         rosprologconfig['look_for_var'] = "Error"
@@ -242,12 +242,12 @@ class OWLReasonerCheck(NV_Check):
         rosprologconfig['query'] = "catch(load_files('" + path + "'), Error, true)."
         result = RosprologCheck(rosprologconfig, True).check()
         if result != "_":
-            actual_result = "loading src/prolog/uglify.pl produced this error:\n"+result
+            actual_result = "loading src/checks/prolog/uglify.pl produced this error:\n"+result
 
         rosprologconfig['query'] = "catch(uglify("+ str(owls_to_uglify) +"), Error, true)."
         result = RosprologCheck(rosprologconfig, True).check()
         if result != "_":
-            actual_result = "running uglify("+str(owls_to_uglify)+"). produced this error:\n"+result
+            actual_result = "running uglify("+str(owls_to_uglify)+"). produced this error:\n"+str(result)
 
         self.msg_level = msg_fail_level
         if actual_result == expected_result:

@@ -79,7 +79,7 @@ uglify1(OutFile, Ontologies) :-
     literal(type(xsd:string,VersionString)),ease),
   %
   source_file(uglify(_), Filepath),
-  string_concat(Basepath, '/prolog/uglify.pl', Filepath),
+  string_concat(Basepath, '/src/checks/prolog/uglify.pl', Filepath),
   forall(member(N,Ontologies), (
       atomic_list_concat([Basepath, '/owl/', N], GlobalPath),
       ease_load(GlobalPath,ease)

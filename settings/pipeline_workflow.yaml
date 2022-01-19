@@ -197,12 +197,20 @@
     fail_response: warn
     fail_reason: "These participants don't have a role"
 
+- RosprologCheck:
+    stage: semantic_annotation
+    query: triple(X,'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',dul:'DesignedArtifact'), triple(X, 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type', 'http://www.w3.org/2002/07/owl#NamedIndividual'), triple(X, 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type', Y), \+ Y\='http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact', Y\='http://www.w3.org/2002/07/owl#NamedIndividual'
+    look_for_var: X
+    expect_var_to_be: False
+    fail_response: warn
+    fail_reason: "These objects have no further classification than being a DesignedArtifact."
+
 # tf_tests
 - RosprologCheck:
     stage: tf_tests
     query: tf_roots(RootFrames)
     look_for_var: RootFrames
-    expect_var_to_be: \['\w*'\]
+    expect_var_to_be: \[u'\w*'\]
     fail_response: err
     fail_reason: "The TF tree is broken and/or doesn't have 'map' as root frame"
 

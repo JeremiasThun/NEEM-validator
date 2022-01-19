@@ -6,6 +6,8 @@
 
   <maintainer email="thun@uni-bremen.de">Jeremias Thun</maintainer>
 
+  <license>BSD</license>
+
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>rosprolog</build_depend>
   <build_depend>rospy</build_depend>
