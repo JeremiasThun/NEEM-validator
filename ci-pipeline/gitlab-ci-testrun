@@ -12,7 +12,7 @@ variables:
 
 NEEM-validator:
   stage: validate
-  image: jeremiasthun/neem-validator:latest
+  image: jeremiasthun/neem-validator:presentation
   services:
     - name: mongo:4.4.3-bionic
       alias: mongo
