@@ -1,0 +1,42 @@
+stages:
+  - validate
+
+variables:
+  KNOWROB_MONGODB_URI: mongodb://mongo:27017/?appname=knowrob
+  KNOWROB_MONGO_HOST: mongo
+  KNOWROB_MONGO_PORT: 27017
+  #KNOWROB_MONGO_USER: ''
+  #KNOWROB_MONGO_PASS: ''
+  NEEM_VALIDATOR: /home/ros/src/neem_validator
+  DB_NAME: roslog
+
+NEEM-validator:
+  stage: validate
+  image: jeremiasthun/neem-validator:latest
+  services:
+    - name: mongo:4.4.3-bionic
+      alias: mongo
+  artifacts:
+    name: "NEEM validation results"
+    paths:
+      - logs/
+    expire_in: 12 weeks
+    when: always
+  script:
+    - PATH_TO_NEEM=$PWD
+    - KNOWROB_MONGO_USER=
+    - KNOWROB_MONGO_PASS=
+   # This section can be activated for DVC with SSH
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add $DVC_KEY
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - cd $PATH_TO_NEEM && dvc pull
+    - cd $NEEM_VALIDATOR
+    - git pull
+    - source /source_ros.sh && roslaunch $NEEM_VALIDATOR/launch/validator.launch path_to_neem:=$PATH_TO_NEEM
+    - echo "############################\n############################\n############################"
+    - cat logs/validation_results
+    - cp -r /home/ros/src/neem_validator/logs $PATH_TO_NEEM/logs
+    - if [[ $(cat logs/errors) == 1 ]]; then exit 1; fi; exit 0
