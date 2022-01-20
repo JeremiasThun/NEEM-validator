@@ -146,8 +146,6 @@ class RosprologCheck(NV_Check):
         compare the binding in actial_result with the expected result.
         """
         if self.use_regex_in_result:
-	    rospy.logwarn(self.expect_var_to_be)
-            rospy.logwarn(actual_result)
             if re.match(self.expect_var_to_be, actual_result):
                 return True
             else:
