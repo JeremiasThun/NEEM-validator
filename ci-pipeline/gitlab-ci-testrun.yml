@@ -7,7 +7,7 @@ variables:
   KNOWROB_MONGO_PORT: 27017
   #KNOWROB_MONGO_USER: ''
   #KNOWROB_MONGO_PASS: ''
-  NEEM_VALIDATOR: /home/ros/src/NEEM-Validator
+  NEEM_VALIDATOR: /home/ros/src/NEEM-validator
   DB_NAME: roslog
 
 NEEM-validator:
